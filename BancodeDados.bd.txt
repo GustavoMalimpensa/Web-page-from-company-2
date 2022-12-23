@@ -1,0 +1,113 @@
+create database sistema
+default character set utf8
+default collate utf8_general_ci;
+
+
+	CREATE TABLE `sistema`.`events` (
+	  id int not null auto_increment,
+	  `title` VARCHAR(90) NOT NULL,
+	  `description` TEXT(255) NOT NULL,
+	  `color` VARCHAR(10)NOT NULL,
+	  `start` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+	  `end` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+       primary key (id));
+
+---------------------------------
+TABELA USUARIOS 
+---------------------------------
+drop database cadastro;
+
+ALTER TABLE nome_da_tabela
+CHANGE nome_atual novo_nome [Tipo de Dados];
+
+NOT NULL == Obrigatorio escrever
+    NULL == Não é obrigatorio escrever
+
+create database cadastro
+default character set utf8
+default collate utf8_general_ci;
+
+CREATE TABLE `cadastro`.`user` (
+id int not null auto_increment,***
+  `name` VARCHAR(16) NOT NULL,
+  `email` VARCHAR(255) NULL,
+  `data_nascimento` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+  `cnh` VARCHAR(32) NOT NULL,
+  `validade` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+  `senha` VARCHAR(32) NOT NULL
+  primary key (id)***);
+  
+   ****** CREATE TABLE `cadastro`.`user` (
+  `id` int not null auto_increment,
+  `name` VARCHAR(16) NOT NULL,
+  `email` VARCHAR(255) NULL,
+  `data_nascimento` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+  `cnh` VARCHAR(32) NOT NULL,
+  `validade` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+  `senha` VARCHAR(32) NOT NULL,
+   primary key (`id`));   ********
+  
+(id=default=padrao)***
+INSERT INTO `cadastro`.`user`
+(`name`,
+`email`,
+`data_nascimento`,
+`cnh`,
+`validade`,
+`senha`)
+VALUES
+('gustavo',
+'gumalimpensa@gmail.com',
+'1999-05-29',
+'474.456.288.43',
+'2024-02-02',
+'Engenharia21');
+
+use cadastro (pra usar o banco de dados)
+
+select * from `cadastro`.`user`(ver tabela)
+
+--------------------------------------------
+TABELA CARRO
+--------------------------------------------
+
+CREATE TABLE `cadastro`.`car` (
+  `motivo_uso` VARCHAR(32) NOT NULL,
+  `data_locacao` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `data_devolucao` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `quilometragem` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, 
+  `gasolina` VARCHAR(32) NOT NULL,
+  `oleo` VARCHAR(32) NOT NULL,
+  `revisao`VARCHAR(32) NOT NULL,
+  `agua` VARCHAR(32) NOT NULL
+  )
+  
+----------------------------------------------
+TABELA IMAGEM 
+----------------------------------------------  
+
+CREATE TABLE IF NOT EXISTS `cadastro`.`tabela_imagens` (
+`codigo` int(10) NOT NULL,
+`evento` varchar(50) NOT NULL,
+`descricao` varchar(255) NOT NULL,
+`nome_imagem` varchar(25) NOT NULL,
+`tamanho_imagem` varchar(25) NOT NULL,
+`tipo_imagem` varchar(25) NOT NULL,
+`imagem` longblob NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  
+---------------------------------------------
+erros : 
+---------------------------------------------
+1046== avisar quak banco de dados está usando
+(LEMBRA SINTAXE )
+1064== erro de sintaxe
+
+
+
+https://www.devmedia.com.br/php-e-mysql-conectando-e-exibindo-dados-de-forma-rapida-dica/28526 leeeeeeeeeeeer
+
+
+
+
+
